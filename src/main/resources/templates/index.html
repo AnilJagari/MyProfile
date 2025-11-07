@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anil Jagari - Portfolio</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+        }
+
+        /* Navbar */
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+        }
+
+        .social-icons a {
+            color: white;
+            margin-left: 10px;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #0d6efd;
+        }
+
+        /* Header */
+        #about h1 {
+            font-size: 2.2rem;
+            color: #0d6efd;
+        }
+
+        #about p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .btn-resume {
+            background-color: #0d6efd;
+            color: #fff;
+            font-weight: 500;
+            border-radius: 50px;
+            padding: 10px 25px;
+            transition: 0.3s;
+        }
+
+        .btn-resume:hover {
+            background-color: #0b5ed7;
+            color: #fff;
+        }
+
+        /* Skill Buttons */
+        .skill-btn {
+            margin: 5px;
+        }
+
+        .skill-details {
+            display: none;
+            margin-top: 15px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-left: 4px solid #0d6efd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #0d6efd;
+            font-size: 1.6rem;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 25px;
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+        }
+
+        footer a {
+            color: #0d6efd;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">ANIL JAGARI</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+            </ul>
+            <div class="social-icons d-flex align-items-center ms-3">
+                <a href="https://www.linkedin.com/in/aniljagari" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/AnilJagari" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.naukri.com/mnjuser/profile?id=&xyz" target="_blank" title="Naukri"><i class="fas fa-briefcase"></i></a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Header / About -->
+<div class="container mt-5" id="about">
+    <h1>Hi, I'm Anil 👋</h1>
+    <p>
+        DevOps & Cloud Engineer (Trainee) skilled in CI/CD, Docker, Kubernetes, Terraform, AWS, and Azure.
+        Passionate about scalable deployments and automation.
+    </p>
+    <a href="/files/resume.pdf" download class="btn btn-resume mt-3">Download My Resume</a>
+</div>
+
+<!-- Technical Skills -->
+<div class="container mt-5" id="skills">
+    <h3 class="section-title">Technical Skills</h3>
+
+    <div class="mb-3">
+        <!-- Buttons -->
+        <button class="btn btn-outline-primary skill-btn" onclick="showSkill('devops')">DevOps Tools</button>
+        <button class="btn btn-outline-primary skill-btn" onclick="showSkill('cicd')">CI/CD</button>
+        <button class="btn btn-outline-primary skill-btn" onclick="showSkill('cloud')">Cloud Platforms</button>
+        <button class="btn btn-outline-primary skill-btn" onclick="showSkill('container')">Containerization</button>
+        <button class="btn btn-outline-primary skill-btn" onclick="showSkill('monitoring')">Monitoring</button>
+        <button class="btn btn-outline-primary skill-btn" onclick="showSkill('build')">Build & Artifact</button>
+        <button class="btn btn-outline-primary skill-btn" onclick="showSkill('testing')">Testing & Automation</button>
+        <button class="btn btn-outline-primary skill-btn" onclick="showSkill('os')">Operating Systems</button>
+        <button class="btn btn-outline-primary skill-btn" onclick="showSkill('scripting')">Scripting & Programming</button>
+        <button class="btn btn-outline-primary skill-btn" onclick="showSkill('db')">Databases</button>
+        <button class="btn btn-outline-primary skill-btn" onclick="showSkill('frontend')">Frontend</button>
+        <button class="btn btn-outline-primary skill-btn" onclick="showSkill('additional')">Additional Skills</button>
+    </div>
+
+    <div id="skill-details-container">
+        <div id="devops" class="skill-details"><strong>DevOps Tools:</strong> Git, GitHub, Jenkins, Docker, Kubernetes, Ansible, Terraform</div>
+        <div id="cicd" class="skill-details"><strong>CI/CD:</strong> Jenkins Pipelines, GitHub Actions, Webhooks, Argo CD, Argo Image Updater</div>
+        <div id="cloud" class="skill-details"><strong>Cloud Platforms:</strong> AWS (EC2, S3, IAM, VPC, ECR, EKS), Azure (VMs, Storage, AKS, ACR)</div>
+        <div id="container" class="skill-details"><strong>Containerization & Orchestration:</strong> Docker, Docker Hub, AWS ECR, Azure ACR, Kubernetes (EKS/AKS)</div>
+        <div id="monitoring" class="skill-details"><strong>Monitoring & Logging:</strong> Prometheus, Grafana</div>
+        <div id="build" class="skill-details"><strong>Build & Artifact Management:</strong> Maven, JFrog</div>
+        <div id="testing" class="skill-details"><strong>Testing & Automation:</strong> SonarQube, JUnit, Selenium</div>
+        <div id="os" class="skill-details"><strong>Operating Systems:</strong> Linux Administration: User Management, File Permissions, Process & Disk Management, Networking</div>
+        <div id="scripting" class="skill-details"><strong>Scripting & Programming:</strong> Python, Bash, YAML, Shell Scripting</div>
+        <div id="db" class="skill-details"><strong>Databases:</strong> MySQL, PostgreSQL</div>
+        <div id="frontend" class="skill-details"><strong>Frontend Development:</strong> HTML, CSS, JavaScript, Bootstrap</div>
+        <div id="additional" class="skill-details"><strong>Additional Technical Expertise:</strong> Full Stack Java, PHP, Machine Learning, Data Structures & Algorithms (DSA)</div>
+    </div>
+</div>
+
+<!-- Projects -->
+<div class="container mt-5" id="projects">
+    <h3 class="section-title">Projects</h3>
+    <ul>
+        <li><strong>CI/CD Pipeline with Jenkins, Argo CD, Kubernetes:</strong> Built pipelines, GitHub integration, and AWS EKS deployment.</li>
+        <li><strong>Automated CI/CD with Jenkins, Docker, Terraform:</strong> Automated builds and deployments with AWS ECS/Fargate using Terraform.</li>
+        <li><strong>DevOps Project with SonarQube, Jenkins, and Monitoring:</strong> Integrated SonarQube, deployed apps via Argo CD, real-time monitoring with Grafana & Prometheus.</li>
+    </ul>
+</div>
+
+<!-- Experience -->
+<div class="container mt-5" id="experience">
+    <h3 class="section-title">Training & Experience</h3>
+    <p><strong>DevOps & Cloud Engineering Trainee | QEdge, Hyderabad, Telangana | Jul 2024 – Jan 2025</strong></p>
+    <ul>
+        <li>Completed intensive 6-month DevOps & Cloud training.</li>
+        <li>Designed and maintained CI/CD pipelines using Jenkins, GitHub Actions, Docker, Kubernetes.</li>
+        <li>Managed AWS & Azure cloud deployments and automated provisioning using Terraform & Ansible.</li>
+        <li>Integrated SonarQube, implemented monitoring, optimized pipelines, and ensured high availability.</li>
+    </ul>
+</div>
+
+<!-- Education -->
+<div class="container mt-5" id="education">
+    <h3 class="section-title">Education</h3>
+    <table class="table table-striped">
+        <thead class="table-dark">
+        <tr>
+            <th>Degree/Examination</th>
+            <th>Institution/University</th>
+            <th>Year</th>
+            <th>Percentage</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>B.Tech (CSE)</td>
+            <td>Mahatma Gandhi University College of Engineering and Technology (UCET), Nalgonda</td>
+            <td>2025</td>
+            <td>81%</td>
+        </tr>
+        <tr>
+            <td>Intermediate</td>
+            <td>Sree Sai Junior College, Hanmakonda / TSBIE</td>
+            <td>2020</td>
+            <td>98%</td>
+        </tr>
+        <tr>
+            <td>SSC</td>
+            <td>TSWREIS Boys, Manthani / BSE Telangana</td>
+            <td>2018</td>
+            <td>92%</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Anil Jagari | Hyderabad, Telangana | Email: <a href="mailto:aniljagari432@gmail.com">aniljagari432@gmail.com</a></p>
+</footer>
+
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script>
+    function showSkill(skillId) {
+        const allSkills = document.querySelectorAll('.skill-details');
+        allSkills.forEach(el => el.style.display = 'none');
+        document.getElementById(skillId).style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
